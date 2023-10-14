@@ -4,7 +4,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { AiOutlineBell } from "react-icons/ai";
 import { TbLogout } from "react-icons/tb";
 import { useEffect, useState } from "react";
-import axios from "axios";
+//import axios from "axios";
 
 interface Props {
   children: React.ReactNode;
@@ -12,6 +12,7 @@ interface Props {
 
 const Container: React.FC<Props> = ({ children }) => {
   const [user, setUser] = useState(null);
+  /*
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const Container: React.FC<Props> = ({ children }) => {
   }, []);
 
   if (loading) return <></>;
-
+  */
   return (
     <div className="flex">
       <Sidebar />
@@ -30,7 +31,7 @@ const Container: React.FC<Props> = ({ children }) => {
         <div className="flex items-center h-24 bg-white border-b-[1.5px] border-b-neutral-100">
           <input className="ml-16 border-[1.5px] border-b-neutral-200 h-10 w-[512px] rounded-lg" />
           <div className="flex flex-col text-sm text-right ml-24">
-            <div>{user.firstName + " " + user.lastName}</div>
+            <div>{"John" + " " + "Doe"}</div>
             <div className="font-bold">Radiologist</div>
           </div>
           <div className="text-xs border-b-neutral-100 border-[1px] p-4 rounded-lg ml-16">
