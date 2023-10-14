@@ -27,20 +27,18 @@ const PatientTable: React.FC<Props> = ({ patients }) => {
             <Thead>
               <Tr>
                 <Th>Name</Th>
-                <Th>Diagnosis</Th>
-                <Th>Status</Th>
-                <Th>Last Appointment</Th>
-                <Th>Next Appointment</Th>
+                <Th>Sex</Th>
+                <Th>Date of Birth</Th>
+                <Th>MRN #</Th>
               </Tr>
             </Thead>
             <Tbody>
               {patients.map((x) => (
                 <PatientRow
-                  name={x.Name}
-                  diagnosis={x.Diagnosis}
-                  status={x.Status}
-                  lastAppointment={x.LastAppointment}
-                  nextAppointment={x.NextAppointment}
+                  Name={x.name}
+                  DOB={x.dob}
+                  MRN={x.mrn}
+                  Sex={x.sex}
                 />
               ))}
             </Tbody>
