@@ -18,7 +18,6 @@ public class RecordService {
                 .data(req.data())
                 .userId(req.userId())
                 .patientId(req.patientId())
-                .templateId(req.templateId())
                 .build();
 
         repository.saveAndFlush(record);
@@ -32,19 +31,5 @@ public class RecordService {
 
     public List<Record> readAllRecordsByPatientId(Long patientId) {
         return repository.findAllByPatientId(patientId);
-    }
-
-    @Transactional
-    public void updateRecord(Long id, RecordUpdateRequest req) {
-        Record record = repository.findById(id)
-                .orElseThrow(() -> new IllegalStateException("Record not found."));
-
-        record.setData(req.data());
-        record.setPatientId(req.patientId());
-        record.setTemplateId(req.templateId());
-    }
-
-    public void deleteRecord(Long id) {
-        repository.deleteById(id);
     }
 }

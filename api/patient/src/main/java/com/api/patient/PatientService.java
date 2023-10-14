@@ -34,19 +34,4 @@ public class PatientService {
     public List<Patient> readAllPatientsByUserId(Long userId) {
         return repository.findAllByUserId(userId);
     }
-
-    @Transactional
-    public void updatePatient(Long id, PatientUpdateRequest req) {
-        Patient patient = repository.findById(id)
-                .orElseThrow(() -> new IllegalStateException("Patient does not exist."));
-
-        patient.setName(req.name());
-        patient.setMrn(req.mrn());
-        patient.setDob(req.dob());
-        patient.setSex(req.sex());
-    }
-
-    public void deletePatient(Long id) {
-        repository.deleteById(id);
-    }
 }
