@@ -64,7 +64,7 @@ public class SecurityConfig {
 
 
     @Bean
-    public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
+    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
                 .authorizeExchange(auth -> auth
                         .pathMatchers("/api/v1/auth/**")
