@@ -13,7 +13,11 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 
-const PatientTable = () => {
+interface Props {
+  patients: any[];
+}
+
+const PatientTable: React.FC<Props> = ({ patients }) => {
   return (
     <div className="pt-4 px-4">
       <div className="mt-4 bg-white border-b-neutral-100 border-[1px] p-4 rounded-lg">

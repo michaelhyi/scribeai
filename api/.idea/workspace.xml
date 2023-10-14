@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="528807df-f5ef-407a-9c33-78ce26ddc965" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/target/classes/com/api/patient/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/patient/target/classes/com/api/patient/PatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/target/classes/com/api/patient/PatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/patient/target/classes/com/api/patient/PatientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/dto/RecordCreateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/dto/RecordCreateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/dto/RecordUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/dto/RecordUpdateRequest.java" afterDir="false" />
-    </list>
+    <list default="true" id="528807df-f5ef-407a-9c33-78ce26ddc965" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +127,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697244452450</updated>
-      <workItem from="1697244453730" duration="17541000" />
+      <workItem from="1697244453730" duration="18261000" />
     </task>
     <servers />
   </component>
