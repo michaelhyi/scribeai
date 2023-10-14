@@ -1,14 +1,9 @@
-import { Dispatch, SetStateAction, useCallback } from "react";
+import OpenAI from "openai";
+import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import {
-  AiFillDelete,
-  AiFillFileText,
-  AiOutlineCloudDownload,
-} from "react-icons/ai";
-import tesseract from "node-tesseract-ocr";
+import { AiOutlineCloudDownload } from "react-icons/ai";
 import { createWorker } from "tesseract.js";
-import 'dotenv/config';
-import OpenAI from 'openai';
+
 interface Props {
   // submitting: boolean;
   // setData: Dispatch<SetStateAction<boolean | null>>;
@@ -33,24 +28,29 @@ const Dropzone: React.FC<Props> = (
   const onDrop = useCallback(async (acceptedFiles: any) => {
     const worker = await createWorker("eng");
     const data = await worker.recognize(acceptedFiles[0]);
-    console.log(data.data.text);
+    const result = data.data.text;
     await worker.terminate();
 
-    const openai = new OpenAI();
-    
-      const response = await openai.chat.completions.create({
-          model: 'gpt-3.5-turbo',
-          messages: [{
-              role: 'user',
-              content: 'Format the following scrambled text from a health record into a JSON format: {text} ' + data.data.text
-          }]
-      });
-      console.log(response.choices[0].message.content);
+    const openai = new OpenAI({
+      apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+      dangerouslyAllowBrowser: true,
+    });
+
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "user",
+          content: `Format the following scrambled text from a health record into a JSON format: ${result}`,
+        },
+      ],
+    });
+
+    console.log(response.choices[0].message.content);
     // setFile(acceptedFiles[0]);
     // setDisabled(false);
   }, []);
-    
-    
+
   // const handleDelete = useCallback(() => {
   //   setFile(null);
   //   setData(null);
