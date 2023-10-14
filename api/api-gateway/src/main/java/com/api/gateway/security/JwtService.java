@@ -1,5 +1,6 @@
 package com.api.gateway.security;
 
+
 import com.api.gateway.user.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -42,7 +43,7 @@ public class JwtService {
 
     public String generate(User user) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("role", user.getRole());
+        claims.put("role", user.getRoles());
 
         Long expirationTimeLong = Long.parseLong(expirationTime); //in second
         final Date createdDate = new Date();

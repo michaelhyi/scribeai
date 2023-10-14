@@ -15,11 +15,11 @@ public class PatientService {
 
     public Long createPatient(PatientCreateRequest req) {
         Patient patient = Patient.builder()
-                .firstName(req.firstName())
-                .lastName(req.lastName())
+                .name(req.name())
                 .mrn(req.mrn())
-                .notes(req.notes())
                 .userId(req.userId())
+                .dob(req.dob())
+                .sex(req.sex())
                 .build();
 
         repository.saveAndFlush(patient);
@@ -40,10 +40,10 @@ public class PatientService {
         Patient patient = repository.findById(id)
                 .orElseThrow(() -> new IllegalStateException("Patient does not exist."));
 
-        patient.setFirstName(req.firstName());
-        patient.setLastName(req.lastName());
+        patient.setName(req.name());
         patient.setMrn(req.mrn());
-        patient.setNotes(req.notes());
+        patient.setDob(req.dob());
+        patient.setSex(req.sex());
     }
 
     public void deletePatient(Long id) {

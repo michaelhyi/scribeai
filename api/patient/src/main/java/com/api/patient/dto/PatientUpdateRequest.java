@@ -1,9 +1,11 @@
 package com.api.patient.dto;
 
+import java.util.Date;
+
 public record PatientUpdateRequest(
-        String firstName,
-        String lastName,
+        String name,
         String mrn,
-        String notes
+        Date dob,
+        String sex
 ) {
 }

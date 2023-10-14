@@ -1,5 +1,6 @@
 package com.api.gateway.security;
 
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;

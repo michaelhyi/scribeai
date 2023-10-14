@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -36,12 +37,12 @@ public class PatientController {
     @PutMapping("{id}")
     public ResponseEntity<Void> updatePatient(
             @PathVariable("id") Long id,
-            @RequestParam("firstName") String firstName,
-            @RequestParam("lastName") String lastName,
+            @RequestParam("name") String name,
             @RequestParam("mrn") String mrn,
-            @RequestParam("notes") String notes
+            @RequestParam("dob") Date dob,
+            @RequestParam("sex") String sex
     ) {
-        PatientUpdateRequest req = new PatientUpdateRequest(firstName, lastName, mrn, notes);
+        PatientUpdateRequest req = new PatientUpdateRequest(name, mrn, dob, sex);
         service.updatePatient(id, req);
         return ResponseEntity.ok().build();
     }

@@ -1,9 +1,11 @@
 package com.api.gateway.security;
 
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -29,10 +31,7 @@ public class SecurityConfig {
     private AuthenticationManager authenticationManager;
     private SecurityContextRepository securityContextRepository;
 
-    public SecurityConfig(
-            AuthenticationManager authenticationManager,
-            SecurityContextRepository securityContextRepository
-    ) {
+    public SecurityConfig(AuthenticationManager authenticationManager, SecurityContextRepository securityContextRepository) {
         this.authenticationManager = authenticationManager;
         this.securityContextRepository = securityContextRepository;
     }
@@ -64,22 +63,7 @@ public class SecurityConfig {
 
 
     @Bean
-    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
-        return http
-                .authorizeExchange(auth -> auth
-                        .pathMatchers("/api/v1/auth/**")
-                        .permitAll()
-                        .pathMatchers("/api/v1/user/**")
-                        .permitAll()
-                        .anyExchange()
-                        .authenticated()
-                )
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .csrf(csrf -> csrf.disable())
-                .formLogin(formLogin -> formLogin.disable())
-                .httpBasic(httpBasic -> httpBasic.disable())
-                .authenticationManager(authenticationManager)
-                .securityContextRepository(securityContextRepository)
-                .build();
+    public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
+        return http.authorizeExchange(auth -> auth.pathMatchers("/api/v1/auth/**").permitAll().pathMatchers("/api/v1/user/**").permitAll().anyExchange().authenticated()).cors(cors -> cors.configurationSource(corsConfigurationSource())).csrf(csrf -> csrf.disable()).formLogin(formLogin -> formLogin.disable()).httpBasic(httpBasic -> httpBasic.disable()).authenticationManager(authenticationManager).securityContextRepository(securityContextRepository).build();
     }
 }

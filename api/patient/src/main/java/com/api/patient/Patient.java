@@ -20,11 +20,11 @@ public class Patient {
     @Id
     @GeneratedValue
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String mrn;
-    private String notes;
     private Long userId;
+    private Date dob;
+    private String sex;
 
     @CreationTimestamp
     private Date createdAt;

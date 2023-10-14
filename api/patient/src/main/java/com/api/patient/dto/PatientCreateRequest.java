@@ -1,10 +1,12 @@
 package com.api.patient.dto;
 
+import java.util.Date;
+
 public record PatientCreateRequest(
-        String firstName,
-        String lastName,
+        String name,
         String mrn,
-        String notes,
-        Long userId
+        Long userId,
+        Date dob,
+        String sex
 ) {
 }

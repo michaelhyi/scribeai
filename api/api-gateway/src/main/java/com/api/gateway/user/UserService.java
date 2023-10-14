@@ -6,6 +6,7 @@ import com.api.gateway.security.JwtService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,13 +21,13 @@ public class UserService {
     }
 
     public String register(RegisterRequest req) {
-        User user = User.builder()
-                .email(req.email())
-                .password(encoder.encode(req.password()))
-                .firstName(req.firstName())
-                .lastName(req.lastName())
-                .role(UserRole.ROLE_USER)
-                .build();
+        User user = new User(
+                req.email(),
+                encoder.encode(req.password()),
+                req.firstName(),
+                req.lastName(),
+                List.of(UserRole.ROLE_USER)
+        );
 
         repository.save(user);
 

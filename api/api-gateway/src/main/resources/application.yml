@@ -11,6 +11,10 @@ spring:
             uri: lb://PATIENT
             predicates:
               - Path=/api/v1/patient/**
+          - id: record
+            uri: lb://RECORD
+            predicates:
+              - Path=/api/v1/record/**
   datasource:
     password: postgres
     url: jdbc:postgresql://localhost:5433/user
