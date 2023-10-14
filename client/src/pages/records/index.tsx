@@ -30,7 +30,7 @@ const Records = () => {
       <div className="px-4 pt-4">
         Records
         <RecordsHeader />
-        <RecordTable records = {records}/>
+        <RecordTable records={records}/>
       </div>
       
     </Container>
