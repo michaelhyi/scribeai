@@ -1,5 +1,6 @@
 import React from "react";
 import Patients from "@/pages/patients";
+import { AiOutlinePlusSquare } from "react-icons/ai";
 import {
   Table,
   Thead,
@@ -22,29 +23,45 @@ const PatientTable = () => {
             <Thead>
               <Tr>
                 <Th>Name</Th>
-                <Th>Age</Th>
-                <Th>Residence</Th>
-                <Th>Record</Th>
+                <Th>Med ID</Th>
+                <Th>Diagnosis</Th>
+                <Th>Status</Th>
+                <Th>Last Appointment</Th>
+                <Th>Next Appointment</Th>
+                <Th>Options</Th>
               </Tr>
             </Thead>
             <Tbody>
               <Tr>
                 <Td>Calvin Huang</Td>
-                <Td>18</Td>
-                <Td>Irvine, California</Td>
-                <Td>He is an avid enjoyer of releasing flatulants</Td>
+                <Td>20050110</Td>
+                <Td>Allergies</Td>
+                <Td>On Treatment</Td>
+                <Td>5/10/2023</Td>
+                <Td>12/14/2023</Td>
+                <Td>
+                  <div className="flex gap-8">
+                    <AiOutlinePlusSquare color="#a3a3a3" size={20} />
+                  </div>
+                </Td>
               </Tr>
               <Tr>
                 <Td>Michael Yi</Td>
-                <Td>18</Td>
-                <Td>Irvine, California</Td>
-                <Td>He is an avid enjoyer of releasing flatulants</Td>
+                <Td>20041214</Td>
+                <Td>Gonorrhea</Td>
+                <Td>Awaiting Surgery</Td>
+                <Td>6/21/2023</Td>
+                <Td>11/24/2023</Td>
+                <Td><AiOutlinePlusSquare color="#a3a3a3" size={20} /></Td>
               </Tr>
               <Tr>
                 <Td>Jonathan Jia</Td>
-                <Td>19</Td>
-                <Td>Long Island, New York</Td>
-                <Td>He is an avid enjoyer of releasing flatulants</Td>
+                <Td>20050419</Td>
+                <Td>Malaria</Td>
+                <Td>Recovered</Td>
+                <Td>4/15/2023</Td>
+                <Td>12/21/2023</Td>
+                <Td><AiOutlinePlusSquare color="#a3a3a3" size={20}/></Td>
               </Tr>
             </Tbody>
             <Tfoot></Tfoot>
