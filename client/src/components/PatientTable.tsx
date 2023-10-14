@@ -1,5 +1,6 @@
 import React from "react";
-import Patients from "@/pages/patients";
+import { patients } from "@/data/patients";
+import PatientRow from "./PatientRow";
 import {
   Table,
   Thead,
@@ -22,30 +23,22 @@ const PatientTable = () => {
             <Thead>
               <Tr>
                 <Th>Name</Th>
-                <Th>Age</Th>
-                <Th>Residence</Th>
-                <Th>Record</Th>
+                <Th>Diagnosis</Th>
+                <Th>Status</Th>
+                <Th>Last Appointment</Th>
+                <Th>Next Appointment</Th>
               </Tr>
             </Thead>
             <Tbody>
-              <Tr>
-                <Td>Calvin Huang</Td>
-                <Td>18</Td>
-                <Td>Irvine, California</Td>
-                <Td>He is an avid enjoyer of releasing flatulants</Td>
-              </Tr>
-              <Tr>
-                <Td>Michael Yi</Td>
-                <Td>18</Td>
-                <Td>Irvine, California</Td>
-                <Td>He is an avid enjoyer of releasing flatulants</Td>
-              </Tr>
-              <Tr>
-                <Td>Jonathan Jia</Td>
-                <Td>19</Td>
-                <Td>Long Island, New York</Td>
-                <Td>He is an avid enjoyer of releasing flatulants</Td>
-              </Tr>
+              {patients.map((x) => (
+                <PatientRow
+                  name={x.Name}
+                  diagnosis={x.Diagnosis}
+                  status={x.Status}
+                  lastAppointment={x.LastAppointment}
+                  nextAppointment={x.NextAppointment}
+                />
+              ))}
             </Tbody>
             <Tfoot></Tfoot>
           </Table>
