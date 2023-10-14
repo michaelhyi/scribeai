@@ -1,10 +1,9 @@
-import OpenAI from "openai";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { AiOutlineCloudDownload } from "react-icons/ai";
-import { createWorker } from "tesseract.js";
 
 interface Props {
+  setValue: any;
   // submitting: boolean;
   // setData: Dispatch<SetStateAction<boolean | null>>;
   // file: { name: string } | null;
@@ -16,40 +15,22 @@ interface Props {
   // setDisabled: Dispatch<SetStateAction<boolean>>;
 }
 
-const Dropzone: React.FC<Props> = (
-  {
-    // submitting,
-    // setData,
-    // file,
-    // setFile,
-    // setDisabled,
-  }
-) => {
-  const onDrop = useCallback(async (acceptedFiles: any) => {
-    const worker = await createWorker("eng");
-    const data = await worker.recognize(acceptedFiles[0]);
-    const result = data.data.text;
-    await worker.terminate();
-
-    const openai = new OpenAI({
-      apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-      dangerouslyAllowBrowser: true,
-    });
-
-    const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "user",
-          content: `Format the following scrambled text from a health record into a JSON format: ${result}`,
-        },
-      ],
-    });
-
-    console.log(response.choices[0].message.content);
-    // setFile(acceptedFiles[0]);
-    // setDisabled(false);
-  }, []);
+const Dropzone: React.FC<Props> = ({
+  setValue,
+  // submitting,
+  // setData,
+  // file,
+  // setFile,
+  // setDisabled,
+}) => {
+  const onDrop = useCallback(
+    async (acceptedFiles: any) => {
+      setValue("file", acceptedFiles[0]);
+      // setFile(acceptedFiles[0]);
+      // setDisabled(false);
+    },
+    [setValue]
+  );
 
   // const handleDelete = useCallback(() => {
   //   setFile(null);

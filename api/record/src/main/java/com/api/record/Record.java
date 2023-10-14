@@ -1,5 +1,6 @@
 package com.api.record;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -21,6 +22,7 @@ public class Record {
     @GeneratedValue
     private Long id;
 
+    @Column(columnDefinition = "text")
     private String data;
     private Long userId;
     private Long patientId;
