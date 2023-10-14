@@ -7,10 +7,10 @@ spring:
   cloud:
     gateway:
       routes:
-  #        - id: post
-  #          uri: lb://POST
-  #          predicates:
-  #            - Path=/api/v1/post/**
+          - id: patient
+            uri: lb://PATIENT
+            predicates:
+              - Path=/api/v1/patient/**
   datasource:
     password: postgres
     url: jdbc:postgresql://localhost:5433/user
