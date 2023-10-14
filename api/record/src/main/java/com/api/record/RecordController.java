@@ -34,7 +34,8 @@ public class RecordController {
             @PathVariable("id") Long id,
             @RequestParam("data") String data,
             @RequestParam("patientId") Long patientId,
-            @RequestParam("templateId") Long templateId) {
+            @RequestParam("templateId") Long templateId
+            ) {
         RecordUpdateRequest req = new RecordUpdateRequest(data, patientId, templateId);
         service.updateRecord(id, req);
         return ResponseEntity.ok().build();
