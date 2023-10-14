@@ -10,6 +10,7 @@
         <module name="api-gateway" />
         <module name="eureka-server" />
         <module name="patient" />
+        <module name="record" />
       </profile>
     </annotationProcessing>
   </component>
