@@ -10,17 +10,25 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 import { format } from "date-fns";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface Props {
+  id: number;
   Name: string;
   DOB: string;
   MRN: string;
   Sex: string;
 }
 
-const PatientRow: React.FC<Props> = ({ Name, DOB, MRN, Sex }) => {
+const PatientRow: React.FC<Props> = ({ id, Name, DOB, MRN, Sex }) => {
+  const router = useRouter();
+
   return (
-    <Tr>
+    <Tr
+      className="cursor-pointer"
+      onClick={() => router.push("/patients/" + id)}
+    >
       <Th>{Name}</Th>
       <Th>
         <div

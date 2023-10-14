@@ -4,8 +4,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Create = () => {
+  const router = useRouter();
   const { register, handleSubmit, setValue, watch } = useForm<FieldValues>({
     defaultValues: {
       mrn: "",
@@ -15,28 +17,33 @@ const Create = () => {
     },
   });
 
-  const handleClick: SubmitHandler<FieldValues> = useCallback(async (data) => {
-    const token = localStorage.getItem("token");
-    const { data: user } = await axios(
-      process.env.NEXT_PUBLIC_API_URL + "/user/" + token
-    );
+  const handleClick: SubmitHandler<FieldValues> = useCallback(
+    async (data) => {
+      const token = localStorage.getItem("token");
+      const { data: user } = await axios(
+        process.env.NEXT_PUBLIC_API_URL + "/user/" + token
+      );
 
-    await axios.post(
-      process.env.NEXT_PUBLIC_API_URL + "/patient",
-      {
-        name: data.name,
-        mrn: data.mrn,
-        userId: user.id,
-        dob: data.dob,
-        sex: data.sex,
-      },
-      {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      }
-    );
-  }, []);
+      await axios
+        .post(
+          process.env.NEXT_PUBLIC_API_URL + "/patient",
+          {
+            name: data.name,
+            mrn: data.mrn,
+            userId: user.id,
+            dob: data.dob,
+            sex: data.sex,
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          }
+        )
+        .then((res) => router.push("/patients/" + res.data));
+    },
+    [router]
+  );
 
   return (
     <Container>
