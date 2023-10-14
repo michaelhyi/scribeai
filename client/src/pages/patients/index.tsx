@@ -1,6 +1,6 @@
-import Container from "../components/Container";
-import PatientHeader from "../components/PatientHeader";
-import PatientTable from "../components/PatientTable";
+import Container from "../../components/Container";
+import PatientHeader from "../../components/PatientHeader";
+import PatientTable from "../../components/PatientTable";
 
 const Patients = () => {
   return (
