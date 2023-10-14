@@ -11,17 +11,17 @@ interface Props {
 }
 
 const Container: React.FC<Props> = ({ children }) => {
-  // const [user, setUser] = useState(null);
-  // const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   axios(process.env.NEXT_PUBLIC_API_URL + "/user/" + token)
-  //     .then((res) => setUser(res.data))
-  //     .finally(() => setLoading(false));
-  // }, []);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    axios(process.env.NEXT_PUBLIC_API_URL + "/user/" + token)
+      .then((res) => setUser(res.data))
+      .finally(() => setLoading(false));
+  }, []);
 
-  // if (loading) return <></>;
+  if (loading) return <></>;
 
   return (
     <div className="flex">
@@ -30,7 +30,7 @@ const Container: React.FC<Props> = ({ children }) => {
         <div className="flex items-center h-24 bg-white border-b-[1.5px] border-b-neutral-100">
           <input className="ml-16 border-[1.5px] border-b-neutral-200 h-10 w-[512px] rounded-lg" />
           <div className="flex flex-col text-sm text-right ml-24">
-            <div>John Dohn</div>
+            <div>{user.firstName + " " + user.lastName}</div>
             <div className="font-bold">Radiologist</div>
           </div>
           <div className="text-xs border-b-neutral-100 border-[1px] p-4 rounded-lg ml-16">
