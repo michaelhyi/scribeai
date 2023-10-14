@@ -7,7 +7,8 @@ import {
 } from "react-icons/ai";
 import tesseract from "node-tesseract-ocr";
 import { createWorker } from "tesseract.js";
-
+import 'dotenv/config';
+import OpenAI from 'openai';
 interface Props {
   // submitting: boolean;
   // setData: Dispatch<SetStateAction<boolean | null>>;
@@ -34,10 +35,22 @@ const Dropzone: React.FC<Props> = (
     const data = await worker.recognize(acceptedFiles[0]);
     console.log(data.data.text);
     await worker.terminate();
+
+    const openai = new OpenAI();
+    
+      const response = await openai.chat.completions.create({
+          model: 'gpt-3.5-turbo',
+          messages: [{
+              role: 'user',
+              content: 'Format the following scrambled text from a health record into a JSON format: {text} ' + data.data.text
+          }]
+      });
+      console.log(response.choices[0].message.content);
     // setFile(acceptedFiles[0]);
     // setDisabled(false);
   }, []);
-
+    
+    
   // const handleDelete = useCallback(() => {
   //   setFile(null);
   //   setData(null);
