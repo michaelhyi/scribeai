@@ -12,21 +12,15 @@ import {
   import { format } from "date-fns";
   
   interface Props {
-    Name: string;
-    MRN: string;
-    DateOfScan: string;
-    Record: string;
+    createdAt: string,
+    updatedAt: string
   }
   
-  const RecordRow: React.FC<Props> = ({ Name, MRN, DateOfScan, Record }) => {
+  const RecordRow: React.FC<Props> = ({ createdAt, updatedAt }) => {
     return (
       <Tr>
-        <Th>{Name}</Th>
-        <Th>
-          {MRN}
-        </Th>
-        <Th>{format(new Date(DateOfScan), "P")}</Th>
-        <Th>{Record}</Th>
+        <Th>{format(new Date(createdAt), "P")}</Th>
+        <Th>{format(new Date(updatedAt), "P")}</Th>
       </Tr>
     );
   };
