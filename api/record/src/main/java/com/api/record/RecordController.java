@@ -28,4 +28,9 @@ public class RecordController {
     public ResponseEntity<List<Record>> readAllRecordsByPatientId(@RequestParam("patientId") Long patientId) {
         return ResponseEntity.ok(service.readAllRecordsByPatientId(patientId));
     }
+
+    @GetMapping("userId/{userId}")
+    public ResponseEntity<List<Record>> readAllRecordsByUserId(@PathVariable("userId") Long userId) {
+        return ResponseEntity.ok(service.readAllRecordsByUserId(userId));
+    }
 }

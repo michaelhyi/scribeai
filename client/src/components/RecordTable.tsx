@@ -1,6 +1,6 @@
 import React from "react";
-import { patients } from "@/data/patients";
-import PatientRow from "./PatientRow";
+import RecordRow from "./RecordRow";
+
 import {
   Table,
   Thead,
@@ -14,31 +14,27 @@ import {
 } from "@chakra-ui/react";
 
 interface Props {
-  patients: any[];
+  records: any[];
 }
 
-const PatientTable: React.FC<Props> = ({ patients }) => {
+const RecordTable: React.FC<Props> = ({ records }) => {
   return (
     <div className="pt-4 px-4">
       <div className="mt-4 bg-white border-b-neutral-100 border-[1px] p-4 rounded-lg">
         <TableContainer>
           <Table variant="simple">
-            <TableCaption>Patient Data Monitorization</TableCaption>
+            <TableCaption>Record Data Monitorization</TableCaption>
             <Thead>
               <Tr>
-                <Th>Name</Th>
-                <Th>Sex</Th>
-                <Th>Date of Birth</Th>
-                <Th>MRN #</Th>
+                <Th>Date Created</Th>
+                <Th>Date Updated</Th>
               </Tr>
             </Thead>
             <Tbody>
-              {patients.map((x) => (
-                <PatientRow
-                  Name={x.name}
-                  DOB={x.dob}
-                  MRN={x.mrn}
-                  Sex={x.sex}
+              {records.map((x) => (
+                <RecordRow
+                  createdAt={x.createdAt}
+                  updatedAt={x.updatedAt}
                 />
               ))}
             </Tbody>
@@ -50,4 +46,4 @@ const PatientTable: React.FC<Props> = ({ patients }) => {
   );
 };
 
-export default PatientTable;
+export default RecordTable;

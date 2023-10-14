@@ -32,4 +32,8 @@ public class RecordService {
     public List<Record> readAllRecordsByPatientId(Long patientId) {
         return repository.findAllByPatientId(patientId);
     }
+    public List<Record> readAllRecordsByUserId(Long userId) {
+        return repository.findAllByUserId(userId);
+    }
+
 }
