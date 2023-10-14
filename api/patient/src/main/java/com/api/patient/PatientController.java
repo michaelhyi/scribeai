@@ -33,22 +33,4 @@ public class PatientController {
     ) {
         return ResponseEntity.ok(service.readAllPatientsByUserId(userId));
     }
-
-    @PutMapping("{id}")
-    public ResponseEntity<Void> updatePatient(
-            @PathVariable("id") Long id,
-            @RequestParam("name") String name,
-            @RequestParam("mrn") String mrn,
-            @RequestParam("dob") Date dob,
-            @RequestParam("sex") String sex
-    ) {
-        PatientUpdateRequest req = new PatientUpdateRequest(name, mrn, dob, sex);
-        service.updatePatient(id, req);
-        return ResponseEntity.ok().build();
-    }
-
-    public ResponseEntity<Void> deletePatient(Long id) {
-        service.deletePatient(id);
-        return ResponseEntity.ok().build();
-    }
 }

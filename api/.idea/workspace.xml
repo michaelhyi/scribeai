@@ -6,33 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="528807df-f5ef-407a-9c33-78ce26ddc965" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/security/Encoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/security/Encoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/security/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/security/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/user/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/user/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/api/gateway/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/security/Encoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/security/Encoder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/security/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/security/JwtService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/security/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/user/User$UserBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/user/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/user/UserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/com/api/gateway/user/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/PatientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/dto/PatientCreateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/dto/PatientCreateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/dto/PatientUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/api/patient/dto/PatientUpdateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/target/classes/com/api/patient/Patient$PatientBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/patient/target/classes/com/api/patient/Patient$PatientBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/target/classes/com/api/patient/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/patient/target/classes/com/api/patient/Patient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient/target/classes/com/api/patient/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/patient/target/classes/com/api/patient/PatientController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient/target/classes/com/api/patient/PatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/patient/target/classes/com/api/patient/PatientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/target/classes/com/api/patient/dto/PatientCreateRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/patient/target/classes/com/api/patient/dto/PatientCreateRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/target/classes/com/api/patient/dto/PatientUpdateRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/patient/target/classes/com/api/patient/dto/PatientUpdateRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/patients/create.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/patients/create.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/dto/RecordCreateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/dto/RecordCreateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/dto/RecordUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/dto/RecordUpdateRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,9 +123,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.RecordApplication" />
         <item itemvalue="Spring Boot.PatientApplication" />
+        <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.EurekaServerApplication" />
       </list>
     </recent_temporary>
@@ -156,7 +138,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697244452450</updated>
-      <workItem from="1697244453730" duration="14094000" />
+      <workItem from="1697244453730" duration="17541000" />
     </task>
     <servers />
   </component>

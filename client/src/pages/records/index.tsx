@@ -1,5 +1,5 @@
 import RecordsHeader from "@/components/RecordsHeader";
-import Container from "../components/Container";
+import Container from "../../components/Container";
 
 const Records = () => {
   return (

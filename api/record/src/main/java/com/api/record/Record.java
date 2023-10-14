@@ -24,7 +24,6 @@ public class Record {
     private String data;
     private Long userId;
     private Long patientId;
-    private Long templateId;
 
     @CreationTimestamp
     private Date createdAt;

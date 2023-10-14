@@ -28,22 +28,4 @@ public class RecordController {
     public ResponseEntity<List<Record>> readAllRecordsByPatientId(@RequestParam("patientId") Long patientId) {
         return ResponseEntity.ok(service.readAllRecordsByPatientId(patientId));
     }
-
-    @PutMapping("{id}")
-    public ResponseEntity<Void> updateRecord(
-            @PathVariable("id") Long id,
-            @RequestParam("data") String data,
-            @RequestParam("patientId") Long patientId,
-            @RequestParam("templateId") Long templateId
-            ) {
-        RecordUpdateRequest req = new RecordUpdateRequest(data, patientId, templateId);
-        service.updateRecord(id, req);
-        return ResponseEntity.ok().build();
-    }
-
-    @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteRecord(@PathVariable("id") Long id) {
-        service.deleteRecord(id);
-        return ResponseEntity.ok().build();
-    }
 }
