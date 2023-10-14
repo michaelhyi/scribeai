@@ -27,4 +27,11 @@ export const patients = [
     LastAppointment: "10/14/23",
     NextAppointment: "10/15/23",
   },
+  {
+    Name: "Andrew Li",
+    Diagnosis: "Ligma",
+    Status: "Uncurable",
+    LastAppointment: "10/14/23",
+    NextAppointment: "10/15/23",
+  },
 ];
