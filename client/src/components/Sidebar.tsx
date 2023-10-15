@@ -10,7 +10,7 @@ const Sidebar = () => {
   return (
     <div className="fixed top-0 left-0 h-screen w-60 flex flex-col bg-white shadow-lg">
       <div className="flex font-semibold text-2xl h-24 items-center justify-center w-full text-blue-400 border-b-[1.5px] border-b-neutral-100">
-        < Image src="/logothing.png" width={500} height={500} alt="logopic" />
+        < Image src="/logo3v2.png" width={80} height={80} alt="logopic" />
       </div>
       <div className="px-6 py-8">
         <div className="text-neutral-700 font-medium text-xs">MENU</div>

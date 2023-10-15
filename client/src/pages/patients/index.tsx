@@ -31,7 +31,7 @@ const Patients = () => {
   return (
     <Container>
       <div></div>
-      <div className="px-4 pt-4">
+      <div className="px-4 pt-4 ">
         Patient Registrer
         <PatientHeader totalPatients={patients.length} />
       </div>
