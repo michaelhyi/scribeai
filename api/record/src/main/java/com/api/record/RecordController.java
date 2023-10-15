@@ -4,6 +4,7 @@ import com.api.record.dto.RecordCreateRequest;
 import com.api.record.dto.RecordUpdateRequest;
 import com.api.record.dto.RecordsResponse;
 import lombok.AllArgsConstructor;
+import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,5 +34,13 @@ public class RecordController {
     @GetMapping("userId/{userId}")
     public ResponseEntity<List<RecordsResponse>> readAllRecordsByUserId(@PathVariable("userId") Long userId) {
         return ResponseEntity.ok(service.readAllRecordsByUserId(userId));
+    }
+
+    @PostMapping("{id}")
+    public ResponseEntity<Void> updateRecord(
+            @PathVariable("id") Long id,
+            @RequestBody RecordUpdateRequest req) {
+        service.updateRecord(id, req.data());
+        return ResponseEntity.ok().build();
     }
 }

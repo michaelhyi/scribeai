@@ -1,5 +1,5 @@
 import React from "react";
-import { records} from "@/data/records";
+import { records } from "@/data/records";
 import { BsThreeDots } from "react-icons/bs";
 import Image from "next/image";
 
@@ -17,7 +17,9 @@ const TotalPatients = () => {
           <Image src="/redGraph.png" width={150} height={150} alt="" />
         </div>
 
-        <h2 className="text-4xl">{RecordLength} </h2>
+        <h2 className="text-4xl">
+          8 <span className="text-sm text-green-600">+6</span>
+        </h2>
       </div>
     </div>
   );

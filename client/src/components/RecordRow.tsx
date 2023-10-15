@@ -37,7 +37,7 @@ const RecordRow: React.FC<Props> = ({
       <Th>{patientName}</Th>
       <Th>{mrn}</Th>
       <Th>{format(new Date(createdAt), "P")}</Th>
-      <Th>{format(new Date(updatedAt), "P")}</Th>
+      <Th>{format(new Date(createdAt), "P")}</Th>
     </Tr>
   );
 };

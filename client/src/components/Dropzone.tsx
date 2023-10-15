@@ -1,8 +1,13 @@
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import { AiOutlineCloudDownload } from "react-icons/ai";
+import {
+  AiFillDelete,
+  AiFillFileText,
+  AiOutlineCloudDownload,
+} from "react-icons/ai";
 
 interface Props {
+  file: any;
   setValue: any;
   // submitting: boolean;
   // setData: Dispatch<SetStateAction<boolean | null>>;
@@ -15,14 +20,7 @@ interface Props {
   // setDisabled: Dispatch<SetStateAction<boolean>>;
 }
 
-const Dropzone: React.FC<Props> = ({
-  setValue,
-  // submitting,
-  // setData,
-  // file,
-  // setFile,
-  // setDisabled,
-}) => {
+const Dropzone: React.FC<Props> = ({ file, setValue }) => {
   const onDrop = useCallback(
     async (acceptedFiles: any) => {
       setValue("file", acceptedFiles[0]);
@@ -31,12 +29,6 @@ const Dropzone: React.FC<Props> = ({
     },
     [setValue]
   );
-
-  // const handleDelete = useCallback(() => {
-  //   setFile(null);
-  //   setData(null);
-  //   setDisabled(true);
-  // }, [setData, setFile, setDisabled]);
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
@@ -61,12 +53,11 @@ const Dropzone: React.FC<Props> = ({
       </div>
       <br />
       <br />
-      {/* {file && (
+      {file && (
         <div className="relative flex flex-col">
           <div className="font-bold text-2xl">Uploaded File</div>
           <br />
           <AiFillDelete
-            onClick={handleDelete}
             className="absolute top-[46px] left-[117px] text-red-400 cursor-pointer duration-500 hover:opacity-50"
             size={20}
           />
@@ -75,7 +66,7 @@ const Dropzone: React.FC<Props> = ({
             <div className="text-xs">{file.name}</div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };

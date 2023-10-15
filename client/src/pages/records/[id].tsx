@@ -2,31 +2,39 @@ import axios from "axios";
 import { format } from "date-fns";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Container from "../../components/Container";
-
-const medicalForm = {
-  "Blood Type": "A+",
-  "Primary Care Physician": "Dr. Smith",
-  "Emergency Contact": "Bob Johnson",
-  "Emergency Contact Phone": "555-123-4567",
-  "Insurance Provider": "XYZ Health Insurance",
-  "Insurance Policy Number": "123456789",
-  Allergies: "None",
-  "Current Medications": "Aspirin, 81mg, once daily",
-  "Medical History": "Hypertension, Asthma",
-  Surgeries: "Appendectomy (2010)",
-  "Family Medical History": "No significant family history",
-  "Recent Procedures": "Colonoscopy (2022-11-15), Mammogram (2023-04-10)",
-  "Next Appointment": "2024-01-15 with Dr. Smith for a check-up",
-  Notes: "Patient is in good health and compliant with medication.",
-};
+import {
+  FieldValue,
+  FieldValues,
+  SubmitHandler,
+  useForm,
+} from "react-hook-form";
+import qs from "query-string";
 
 const View = () => {
   const router = useRouter();
   const [data, setData] = useState(null);
   const [patientData, setPatientData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { register, setValue, handleSubmit } = useForm<FieldValues>({
+    defaultValues: {
+      data: "",
+    },
+  });
+
+  const handleEdit: SubmitHandler<FieldValues> = useCallback(
+    async (formData) => {
+      const token = await localStorage.getItem("token");
+
+      await axios.post(
+        process.env.NEXT_PUBLIC_API_URL + "/record/" + router.query.id,
+        formData,
+        { headers: { Authorization: "Bearer " + token } }
+      );
+    },
+    [router.query.id]
+  );
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -38,6 +46,8 @@ const View = () => {
       })
         .then(async (res) => {
           setData(res.data);
+          setValue("data", res.data.data);
+
           await axios(
             process.env.NEXT_PUBLIC_API_URL + "/patient/" + res.data.patientId,
             {
@@ -89,20 +99,23 @@ const View = () => {
         <div className="flex flex-col mt-6 bg-white p-8 px-16 rounded-xl shadow-sm">
           <div className="ml-auto mb-6">
             <div className="font-normal text-base">
-              <button className="border-[1px] border-neutral-200 px-4 py-2 rounded-md shadow-sm duration-500 hover:opacity-50">
-                Edit
-              </button>
               <button className="ml-2 border-[1px] border-neutral-200 px-4 py-2 rounded-md shadow-sm duration-500 hover:opacity-50">
                 Delete
               </button>
             </div>
           </div>
-          {Object.keys(medicalForm).map((v) => (
-            <div key={v} className="flex justify-between mt-2">
-              <div className="font-bold">{v}</div>
-              <div className="">{medicalForm[v]}</div>
-            </div>
-          ))}
+          <textarea
+            defaultValue={data.data}
+            id="data"
+            {...register("data")}
+            className="mt-2 border-[1.5px] border-b-neutral-200 h-96 rounded-lg p-4"
+          />
+          <button
+            onClick={(e) => handleSubmit(handleEdit)(e)}
+            className="bg-blue-300 py-3 text-white font-bold rounded-xl shadow-md duration-500 hover:opacity-50 w-48 mt-12"
+          >
+            Save
+          </button>
         </div>
       </div>
     </Container>

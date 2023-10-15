@@ -8,6 +8,7 @@ import Dropzone from "../../components/Dropzone";
 import { analyze } from "../../utils/ai";
 import { Spinner } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
+import { sleep } from "../../utils/sleep";
 
 const Create = () => {
   const router = useRouter();
@@ -47,7 +48,7 @@ const Create = () => {
             },
           }
         )
-        .then((res) => router.push("/records/" + res.data.id));
+        .then((res) => router.push("/records/" + res.data));
     },
     [router]
   );
@@ -98,7 +99,7 @@ const Create = () => {
               </select>
             </div>
             <div className="mt-12" />
-            <Dropzone setValue={setValue} />
+            <Dropzone file={watch("file")} setValue={setValue} />
             <button
               onClick={(e) => handleSubmit(handleClick)(e)}
               className="bg-blue-300 text-white font-bold px-4 py-2 mt-12 rounded-lg shadow-md"

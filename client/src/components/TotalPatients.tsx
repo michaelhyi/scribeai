@@ -3,8 +3,6 @@ import { patients } from "@/data/patients";
 import { BsThreeDots } from "react-icons/bs";
 import Image from "next/image";
 
-const PatientLength: number = patients.length;
-
 const TotalPatients = () => {
   return (
     <div className="pt-4">
@@ -17,7 +15,9 @@ const TotalPatients = () => {
           <Image src="/blueGraph.png" width={135} height={100} alt="" />
         </div>
 
-        <h2 className="text-4xl">{PatientLength} </h2>
+        <h2 className="text-4xl">
+          4 <span className="text-sm text-green-600">+4</span>
+        </h2>
       </div>
     </div>
   );

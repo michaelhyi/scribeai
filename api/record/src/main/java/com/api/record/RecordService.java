@@ -45,7 +45,7 @@ public class RecordService {
     }
 
     public List<RecordsResponse> readAllRecordsByPatientId(Long patientId) {
-        List<Record> records = repository.findAllByPatientId(patientId);
+        List<Record> records = repository.findAllByPatientIdOrderByCreatedAtDesc(patientId);
         List<RecordsResponse> response = new ArrayList<>();
 
         for (Record r : records) {
@@ -74,7 +74,7 @@ public class RecordService {
     }
 
     public List<RecordsResponse> readAllRecordsByUserId(Long userId) {
-        List<Record> records = repository.findAllByUserId(userId);
+        List<Record> records = repository.findAllByUserIdOrderByCreatedAtDesc(userId);
         List<RecordsResponse> response = new ArrayList<>();
 
         for (Record r : records) {
@@ -99,6 +99,13 @@ public class RecordService {
         }
 
         return response;
+    }
+
+    @Transactional
+    public void updateRecord(Long id, String data) {
+        Record record = repository.findById(id).orElseThrow(() -> new IllegalStateException("Record does not exist."));
+
+        record.setData(AES.encrypt(data, "a7f8e92c0196a31bfba2ce4b9275ec8641db1ce98f4cc4cd4e74aa1538bbd5e7"));
     }
 
 }
