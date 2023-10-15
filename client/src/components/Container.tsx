@@ -30,17 +30,17 @@ const Container: React.FC<Props> = ({ children }) => {
         <div className="flex items-center h-24 bg-white border-b-[1.5px] border-b-neutral-100">
           <input className="ml-16 border-[1.5px] border-b-neutral-200 h-10 w-[512px] rounded-lg" />
           <div className="flex flex-col text-sm text-right ml-24">
-            <div>{user.firstName + " " + user.lastName}</div>
+            <div>Joe</div>
             <div className="font-bold">Radiologist</div>
           </div>
-          <div className="text-xs border-b-neutral-100 border-[1px] p-4 rounded-lg ml-16">
+          <div className="text-xs border-b-neutral-100 border-[1px] p-4 rounded-lg ml-16 shadow-md">
             {format(new Date(), "PPP")}
           </div>
-          <div className="ml-20" />
+          <div className="ml-20 shadow-md" />
           <AiOutlineMail color="#a3a3a3" size={20} />
-          <div className="ml-8" />
+          <div className="ml-8 shadow-md" />
           <AiOutlineBell color="#a3a3a3" size={20} />
-          <div className="ml-8" />
+          <div className="ml-8 shadow-md" />
           <TbLogout color="#a3a3a3" size={20} />
         </div>
         <div>{children}</div>
