@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: postgres-patient
+  name: postgres-patient
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-patient
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: postgres-patient
+    spec:
+      containers:
+        - args:
+            - -p
+            - "5434"
+          env:
+            - name: PGDATA
+              value: /data/postgres
+            - name: POSTGRES_DB
+              value: patient
+            - name: POSTGRES_PASSWORD
+              value: postgres
+            - name: POSTGRES_USER
+              value: postgres
+          image: postgres
+          name: postgres-patient
+          ports:
+            - containerPort: 5434
+          resources: {}
+          volumeMounts:
+            - mountPath: /data/postgres
+              name: postgres-patient-claim0
+      restartPolicy: Always
+      volumes:
+        - name: postgres-patient-claim0
+          persistentVolumeClaim:
+            claimName: postgres-patient-claim0
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: postgres-patient
+  name: postgres-patient
+spec:
+  ports:
+    - name: "5434"
+      port: 5434
+      targetPort: 5434
+  selector:
+    app: postgres-patient
+  type: NodePort
+status:
+  loadBalancer: {}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: postgres-patient-claim0
+  name: postgres-patient-claim0
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+status: {}

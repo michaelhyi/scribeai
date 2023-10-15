@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patient
+  labels:
+    app: patient
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: patient
+  template:
+    metadata:
+      labels:
+        app: patient
+    spec:
+      containers:
+        - name: patient
+          image: michaelyi/hack-gt-patient:latest
+          ports:
+            - containerPort: 8081
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: patient
+  labels:
+    app: patient
+spec:
+  selector:
+    app: patient
+  ports:
+    - port: 8081
+      targetPort: 8081
+  type: NodePort

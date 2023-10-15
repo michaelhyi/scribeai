@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: record
+  labels:
+    app: record
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: record
+  template:
+    metadata:
+      labels:
+        app: record
+    spec:
+      containers:
+        - name: record
+          image: michaelyi/hack-gt-record:latest
+          ports:
+            - containerPort: 8082
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: record
+  labels:
+    app: record
+spec:
+  selector:
+    app: record
+  ports:
+    - port: 8082
+      targetPort: 8082
+  type: NodePort
