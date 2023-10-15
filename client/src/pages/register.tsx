@@ -1,8 +1,10 @@
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 const Register = () => {
+  const router = useRouter();
   const { register, handleSubmit } = useForm<FieldValues>({
     defaultValues: {
       firstName: "",
@@ -16,7 +18,8 @@ const Register = () => {
     async (data) => {
       await axios
         .post(process.env.NEXT_PUBLIC_API_URL + "/auth/register", data)
-        .then((res) => localStorage.setItem("token", res.data));
+        .then((res) => localStorage.setItem("token", res.data))
+        .finally(() => router.push("/"));
     },
     []
   );

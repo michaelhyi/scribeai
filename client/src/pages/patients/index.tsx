@@ -33,7 +33,7 @@ const Patients = () => {
       <div></div>
       <div className="px-4 pt-4 ">
         Patient Registrer
-        <PatientHeader />
+        <PatientHeader totalPatients={patients.length} />
       </div>
       <PatientTable patients={patients} />
     </Container>

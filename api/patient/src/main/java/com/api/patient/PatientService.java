@@ -32,6 +32,6 @@ public class PatientService {
     }
 
     public List<Patient> readAllPatientsByUserId(Long userId) {
-        return repository.findAllByUserId(userId);
+        return repository.findAllByUserIdOrderByNameAsc(userId);
     }
 }
