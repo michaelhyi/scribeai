@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="528807df-f5ef-407a-9c33-78ce26ddc965" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/RecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record/target/classes/com/api/record/RecordApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/record/target/classes/com/api/record/RecordApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/../client/bun.lockb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/components/Container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/utils/ai.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/ai.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dashboard",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "/Users/michaelyi/dev/personal/hackgt/api/pom.xml",
@@ -134,11 +135,41 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697244452450</updated>
-      <workItem from="1697244453730" duration="25587000" />
+      <workItem from="1697244453730" duration="30850000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/record/src/main/java/com/api/record/RecordService.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/record/src/main/java/com/api/record/RecordApplication.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/record/src/main/java/com/api/record/RecordService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/record/src/main/java/com/api/record/RecordService.java</url>
+          <line>32</line>
+          <properties class="com.api.record.RecordService" method="readRecord">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

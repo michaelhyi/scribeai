@@ -2,6 +2,7 @@ package com.api.record;
 
 import com.api.record.dto.RecordCreateRequest;
 import com.api.record.dto.RecordUpdateRequest;
+import com.api.record.dto.RecordsResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,12 +26,12 @@ public class RecordController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Record>> readAllRecordsByPatientId(@RequestParam("patientId") Long patientId) {
+    public ResponseEntity<List<RecordsResponse>> readAllRecordsByPatientId(@RequestParam("patientId") Long patientId) {
         return ResponseEntity.ok(service.readAllRecordsByPatientId(patientId));
     }
 
     @GetMapping("userId/{userId}")
-    public ResponseEntity<List<Record>> readAllRecordsByUserId(@PathVariable("userId") Long userId) {
+    public ResponseEntity<List<RecordsResponse>> readAllRecordsByUserId(@PathVariable("userId") Long userId) {
         return ResponseEntity.ok(service.readAllRecordsByUserId(userId));
     }
 }

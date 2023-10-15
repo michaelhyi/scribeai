@@ -26,7 +26,7 @@ const Container: React.FC<Props> = ({ children }) => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="flex flex-col bg-[#F9F9F9] m-0 h-screen w-full overflow-hidden ml-60">
+      <div className="flex flex-col bg-[#F9F9F9] m-0 h-screen w-full  ml-60">
         <div className="flex items-center h-24 bg-white border-b-[1.5px] border-b-neutral-100">
           <input
             className="ml-16 border-[1.5px] border-b-neutral-200 h-10 w-[512px] rounded-lg px-4"

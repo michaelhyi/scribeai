@@ -24,6 +24,7 @@ const View = () => {
       })
         .then(async (res) => {
           setData(res.data);
+
           await axios(
             process.env.NEXT_PUBLIC_API_URL +
               "/record?" +
@@ -74,9 +75,9 @@ const View = () => {
             </button>
           </div>
         </div>
-        <RecordsHeader />
+        <RecordsHeader recordsLength={records.length} />
+        <RecordTable records={records} />
       </div>
-      <RecordTable records={records} />
     </Container>
   );
 };

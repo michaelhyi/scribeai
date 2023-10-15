@@ -33,20 +33,21 @@ const Create = () => {
 
       const result = await analyze(data.file);
 
-      await axios.post(
-        process.env.NEXT_PUBLIC_API_URL + "/record",
-        {
-          data: result,
-          userId: user.id,
-          patientId: data.patientId,
-        },
-        {
-          headers: {
-            Authorization: "Bearer " + token,
+      await axios
+        .post(
+          process.env.NEXT_PUBLIC_API_URL + "/record",
+          {
+            data: result,
+            userId: user.id,
+            patientId: data.patientId,
           },
-        }
-      );
-      router.push("/records");
+          {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          }
+        )
+        .then((res) => router.push("/records/" + res.data.id));
     },
     [router]
   );

@@ -15,24 +15,22 @@ const Records = () => {
       .then(async (res) => {
         const user = await res.data;
         await axios(
-          process.env.NEXT_PUBLIC_API_URL +
-            "/record/userId/" +
-             user!.id,
+          process.env.NEXT_PUBLIC_API_URL + "/record/userId/" + user!.id,
           { headers: { Authorization: "Bearer " + token } }
         ).then((res) => setRecords(res.data));
       })
-      .finally(() => setLoading(false));  }, []);
+      .finally(() => setLoading(false));
+  }, []);
 
-    if (loading) return <></>
-    
+  if (loading) return <></>;
+
   return (
     <Container>
       <div className="px-4 pt-4">
         Records
-        <RecordsHeader />
-        <RecordTable records={records}/>
+        <RecordsHeader recordsLength={records.length} />
+        <RecordTable records={records} />
       </div>
-      
     </Container>
   );
 };
