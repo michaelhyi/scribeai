@@ -35,6 +35,8 @@ const PatientTable: React.FC<Props> = ({ patients }) => {
             <Tbody>
               {patients.map((x) => (
                 <PatientRow
+                  key={x}
+                  id={x.id}
                   Name={x.name}
                   DOB={x.dob}
                   MRN={x.mrn}
