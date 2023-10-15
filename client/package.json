@@ -24,6 +24,7 @@
     "openai": "^4.12.1",
     "query-string": "^8.1.0",
     "react": "^18",
+    "react-calendar": "^4.6.0",
     "react-datepicker": "^4.20.0",
     "react-dom": "^18",
     "react-dropzone": "14.2.3",

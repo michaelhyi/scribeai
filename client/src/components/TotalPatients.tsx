@@ -1,22 +1,23 @@
 import React from "react";
-import { patients} from "@/data/patients";
-import { BsThreeDots } from 'react-icons/bs';
+import { patients } from "@/data/patients";
+import { BsThreeDots } from "react-icons/bs";
+import Image from "next/image";
 
 const PatientLength: number = patients.length;
 
 const TotalPatients = () => {
   return (
-    <div className="pt-4 px-4">
-      <div className="mt-4 w-96 bg-white border-b-neutral-100 border-[1px] p-4 rounded-lg float-right" >
-        <h1 className="flex justify-between">
-            Total Patients 
-            <BsThreeDots color="#a3a3a3" size={20}/>
-
+    <div className="pt-4">
+      <div className="mt-4 w-96 bg-white border-b-neutral-100 border-[1px] py-2 px-4 rounded-lg float-right shadow-md">
+        <h1 className="pt-2 flex justify-between">
+          Total Patients
+          <BsThreeDots color="#a3a3a3" size={20} />
         </h1>
-        
-        <h2 className="text-4xl">{ PatientLength } </h2>
+        <div className="ml-36">
+          <Image src="/blueGraph.png" width={135} height={100} alt="" />
+        </div>
 
-        
+        <h2 className="text-4xl">{PatientLength} </h2>
       </div>
     </div>
   );
