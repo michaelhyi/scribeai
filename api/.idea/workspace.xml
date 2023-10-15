@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="528807df-f5ef-407a-9c33-78ce26ddc965" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/record/src/main/java/com/api/record/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/record/src/main/java/com/api/record/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/patients/create.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/patients/create.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/data/patients.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/data/patients.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "updatedtable",
+    "git-widget-placeholder": "dashboard",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "/Users/michaelyi/dev/personal/hackgt/api/pom.xml",
     "node.js.detected.package.eslint": "true",
