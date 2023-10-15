@@ -7,6 +7,8 @@ export const analyze = async (file: any) => {
   const result = data.data.text;
   await worker.terminate();
 
+  console.log(result);
+
   const openai = new OpenAI({
     apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
     dangerouslyAllowBrowser: true,
